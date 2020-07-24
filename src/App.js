@@ -5,6 +5,7 @@ import {db,auth} from './firebase'
 import { makeStyles } from '@material-ui/core/styles';
 import Modal from '@material-ui/core/Modal';
 import { Button, Input } from '@material-ui/core';
+import ImageUpload from './ImageUpload';
 
 
 
@@ -68,14 +69,9 @@ useEffect(() => {
 },[user,username])
 
 
-
-
-
-
-
 useEffect(() => {
   // Code goes here
-  db.collection('posts').onSnapshot(snapshot => {
+  db.collection('posts').orderBy('timestamp', 'desc').onSnapshot(snapshot => {
     // everytime time a post is added,this code fires off
     setPost(snapshot.docs.map(doc => ({ id: doc.id,
       post: doc.data()
@@ -110,6 +106,11 @@ const signIn = (event) => {
 
   return (
     <div className="App">
+
+     
+
+     
+
        <Modal
         open={open}
         onClose={() => setOpen(false)}
@@ -180,7 +181,7 @@ const signIn = (event) => {
       {/* Header */}
       <div className="app__header">
         <h2 className="logo">Instagram</h2>
-      </div>
+     
       { user ? (
          <Button onClick={() => auth.signOut()}>Log Out</Button>
          
@@ -191,6 +192,7 @@ const signIn = (event) => {
         </div>
         
       )}
+       </div>
       
 
       <h1>Come home to me </h1>
@@ -200,6 +202,12 @@ const signIn = (event) => {
         <Post key={id} username={post.username} caption={post.caption} imageURL={post.imageURL} />
       ))
     }
+
+{user?.displayName ? (
+         <ImageUpload  username={user.displayName}/>
+      ) : (
+        <h3>Sorry you need to login to upload</h3>
+      )}
 
       
     </div>
