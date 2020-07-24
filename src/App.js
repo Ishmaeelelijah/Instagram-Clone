@@ -6,6 +6,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Modal from '@material-ui/core/Modal';
 import { Button, Input } from '@material-ui/core';
 import ImageUpload from './ImageUpload';
+import InstagramEmbed from 'react-instagram-embed'
 
 
 
@@ -106,11 +107,6 @@ const signIn = (event) => {
 
   return (
     <div className="App">
-
-     
-
-     
-
        <Modal
         open={open}
         onClose={() => setOpen(false)}
@@ -195,13 +191,33 @@ const signIn = (event) => {
        </div>
       
 
-      <h1>Come home to me </h1>
- 
-    {
+       <div className="app__posts">
+         <div className="app__postsLeft">
+         {
       post.map(({ id,post}) =>(
-        <Post key={id} username={post.username} caption={post.caption} imageURL={post.imageURL} />
+        <Post key={id} postId={id} user={user} username={post.username} caption={post.caption} imageURL={post.imageURL} />
       ))
     }
+         </div>
+     <div className="app__postsRight">
+     <InstagramEmbed
+       url="https://www.instagram.com/p/B8UaSDoJKT5/?utm_source=ig_web_copy_link"
+       maxWidth={320}
+       hideCaption={false}
+       containerTagName='div'
+       protocol=''
+       injectScript
+       onLoading={() => {}}
+       onSuccess={()  => {}}
+       onAfterRender={() => {}}
+       onFailure={() => {}}
+       />
+     </div>
+       </div>
+
+       
+ 
+  
 
 {user?.displayName ? (
          <ImageUpload  username={user.displayName}/>

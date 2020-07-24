@@ -8,14 +8,31 @@
 .app__header{
   background-color: #fafafa;
   padding: 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1;
   border-bottom: 1px solid lightgray;
   object-fit: contain;
   display: flex;
+  justify-content: space-between;
 }
+
 .logo{
   font-family: 'Lobster', cursive;
+  object-fit: contain;
 }
+
 .app__signup{
    display: flex;
    flex-direction: column;
+}
+
+.app__posts{
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.app__postsRight{
+  margin-left: 15px;
 }

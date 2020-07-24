@@ -23,3 +23,27 @@
     border: 1px solid lightgray;
     margin-bottom: 45px;
 }
+
+.post__commentBox{
+display: flex;
+margin-top: 10px ;
+
+}
+
+.post__input{
+flex: 1;
+border: none;
+padding: 10px;
+border-top: 2px solid lightgray;
+}
+
+.post__button{
+    flex: 0;
+    border: none;
+    color: blue;
+    background-color: transparent;
+    border-top: 2px solid lightgray;
+}
+.posts__commets{
+    padding: 15px;
+}
