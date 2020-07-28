@@ -36,3 +36,8 @@
 .app__postsRight{
   margin-left: 15px;
 }
+.must__login{
+  color: Red;
+  text-align: center;
+  text-decoration: underline;
+}
