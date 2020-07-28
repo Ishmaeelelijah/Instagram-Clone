@@ -25,6 +25,7 @@
 .app__signup{
    display: flex;
    flex-direction: column;
+   
 }
 
 .app__posts{
@@ -40,4 +41,7 @@
   color: Red;
   text-align: center;
   text-decoration: underline;
+}
+::placeholder{
+  text-align: center;
 }

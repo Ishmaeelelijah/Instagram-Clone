@@ -119,19 +119,20 @@ const signIn = (event) => {
 
 {/* sign up modal */}
       <form className="app__signup">
-      <Input 
+      <Input className="text"
         type="text"
         placeholder="username"
         value={username}
         onChange={(e) => setUserName((e.target.value))} />
        
-        <Input 
+        <Input className="text"
         placeholder="email"
         type="text"
         value={email}
         onChange={(e) => setEmail((e.target.value))} />
        
-        <Input placeholder="password"
+        <Input className="text"
+         placeholder="password"
         type="password"
         value={password}
         onChange={(e) => setPassword((e.target.value))} />
@@ -156,13 +157,14 @@ const signIn = (event) => {
 {/* sign up modal */}
       <form className="app__signup">
       
-        <Input 
+        <Input className="text"
         placeholder="email"
         type="text"
         value={email}
         onChange={(e) => setEmail((e.target.value))} />
        
-        <Input placeholder="password"
+        <Input className="text"
+        placeholder="password"
         type="password"
         value={password}
         onChange={(e) => setPassword((e.target.value))} />
