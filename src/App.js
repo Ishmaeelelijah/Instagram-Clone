@@ -6,7 +6,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Modal from '@material-ui/core/Modal';
 import { Button, Input } from '@material-ui/core';
 import ImageUpload from './ImageUpload';
-import InstagramEmbed from 'react-instagram-embed'
+// import InstagramEmbed from 'react-instagram-embed'
 
 
 
@@ -200,7 +200,7 @@ const signIn = (event) => {
     }
          </div>
      <div className="app__postsRight">
-     <InstagramEmbed
+     {/* <InstagramEmbed
        url="https://www.instagram.com/p/B8UaSDoJKT5/?utm_source=ig_web_copy_link"
        maxWidth={320}
        hideCaption={false}
@@ -211,7 +211,7 @@ const signIn = (event) => {
        onSuccess={()  => {}}
        onAfterRender={() => {}}
        onFailure={() => {}}
-       />
+       /> */}
 
 
      </div>
