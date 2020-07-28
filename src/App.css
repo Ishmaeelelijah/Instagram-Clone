@@ -45,3 +45,6 @@
 ::placeholder{
   text-align: center;
 }
+:only-of-type{
+  text-align: center;
+}
