@@ -6,7 +6,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Modal from '@material-ui/core/Modal';
 import { Button, Input } from '@material-ui/core';
 import ImageUpload from './ImageUpload';
-// import InstagramEmbed from 'react-instagram-embed'
+import AboutPage from './componets/AboutPage'
 
 
 
@@ -34,7 +34,7 @@ const useStyles = makeStyles((theme) => ({
 
 
 
-function App() {
+function App()  {
   const classes = useStyles();
   const [modalStyle] = useState(getModalStyle);
   const [post, setPost] = useState([]);
@@ -103,6 +103,7 @@ const signIn = (event) => {
 
   setOpenSignIn(false);
 }
+
 
 
   return (
@@ -178,6 +179,7 @@ const signIn = (event) => {
 
       {/* Header */}
       <div className="app__header">
+     
         <h2 className="logo">Instagram</h2>
      
       { user ? (
@@ -187,6 +189,8 @@ const signIn = (event) => {
         <div className="app__loginContainer">
           <Button onClick={() => setOpenSignIn(true)}>Sign In</Button>
           <Button onClick={() => setOpen(true)}>Sign Up</Button>
+         
+          
         </div>
         
       )}
@@ -202,33 +206,37 @@ const signIn = (event) => {
     }
          </div>
      <div className="app__postsRight">
-     {/* <InstagramEmbed
-       url="https://www.instagram.com/p/B8UaSDoJKT5/?utm_source=ig_web_copy_link"
-       maxWidth={320}
-       hideCaption={false}
-       containerTagName='div'
-       protocol=''
-       injectScript
-       onLoading={() => {}}
-       onSuccess={()  => {}}
-       onAfterRender={() => {}}
-       onFailure={() => {}}
-       /> */}
+     
 
 
      </div>
      
        </div>
-
-       
+      
+      
 {user?.displayName ? (
+  
          <ImageUpload  username={user.displayName}/>
+         
       ) : (
         <h3 className="must__login">SORRY  TO POST YOU NEED TO LOGIN OR CREATE AN ACCOUNT</h3>
+        
       )}
+      <br></br>
 
-      
+
+      { user ? (
+        <AboutPage/>
+         
+      ) : (
+        <div className="app__loginContainer">
+         
+        </div>
+        
+      )}
     </div>
+    
+ 
   );
 }
 

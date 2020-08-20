@@ -4,6 +4,7 @@ import Avatar from '@material-ui/core/Avatar'
 import { db } from './firebase';
 import firebase from 'firebase'
 
+
 function Post({user,  postId , username, caption,imageURL}) {
     const [ comments, setCommments] = useState([]);
     const [ comment, setCommment] = useState("");
@@ -80,8 +81,9 @@ function Post({user,  postId , username, caption,imageURL}) {
                         </button>
                     </form>
                     )}
-            
+          
         </div>
+        
     )
 }
 

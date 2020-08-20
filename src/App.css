@@ -48,3 +48,15 @@
 :only-of-type{
   text-align: center;
 }
+
+.about{
+  background-color:gray;
+  height: 70vh;
+}
+Image{
+  width: 20px;
+}
+
+.contact{
+  font-size: 10px;
+}
